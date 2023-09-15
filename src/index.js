@@ -1,11 +1,8 @@
+require('dotenv').config()
+
 const express   = require('express');
 const app       = express();
-const port      = 4000;
-
-// ========================================
-// DATABASE - MYSQL
-// ========================================
-
+const PORT      = process.env.PORT || 5000;
 
 // ========================================
 // MIDDLEWARE
@@ -23,10 +20,9 @@ const usersRoutes = require('./routes/users')
 
 app.use('/users', usersRoutes);
 
-
 // ======================================
 // SERVER
 // =======================================
-app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
 })

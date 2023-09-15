@@ -1,9 +1,10 @@
 const mysql = require('mysql2');
+
 const dbpool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    passwod: '',
-    database: 'express_mysql',
+    host    : process.env.DB_HOST,
+    user    : process.env.DB_USERNAME,
+    passwod : process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
 });
 
 module.exports = dbpool.promise();
