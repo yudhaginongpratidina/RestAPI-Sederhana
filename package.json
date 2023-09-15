@@ -4,7 +4,7 @@
   "description": "Rest API dengan Express JS dan MySQL",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "Yudha Ginong Pratidina",
