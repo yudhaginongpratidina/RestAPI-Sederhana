@@ -11,6 +11,7 @@ const middleWareLogRequest = require('./middleware/logs');
 
 app.use(middleWareLogRequest);
 app.use(express.json());
+app.use('/assets', express.static('public/images'))
 
 // ========================================
 // ROUTING
