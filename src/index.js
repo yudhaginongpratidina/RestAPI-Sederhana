@@ -9,6 +9,7 @@ const port      = 4000;
 const middleWareLogRequest = require('./middleware/logs');
 
 app.use(middleWareLogRequest);
+app.use(express.json());
 
 // ========================================
 // ROUTING
