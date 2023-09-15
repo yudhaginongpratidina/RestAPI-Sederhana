@@ -14,12 +14,28 @@ app.use(express.json());
 app.use('/assets', express.static('public/images'))
 
 // ========================================
-// ROUTING
+// ROUTING URL PAGE / DATA
 // ========================================
-const usersRoutes = require('./routes/users')
-
+const usersRoutes = require('./routes/users');
 
 app.use('/users', usersRoutes);
+
+// ========================================
+// ROUTING URL UPLOAD
+// ========================================
+const upload = require('./middleware/multer');
+
+app.post('/upload', upload.single('photo') ,(req,res) => {
+    res.json({
+        message : 'Upload Berhasil'
+    })
+})
+
+app.use((err, req, res, next) => {
+    res.json ({
+        message: err.message
+    })
+})
 
 // ======================================
 // SERVER
