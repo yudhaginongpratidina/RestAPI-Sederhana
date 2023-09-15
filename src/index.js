@@ -2,6 +2,10 @@ const express   = require('express');
 const app       = express();
 const port      = 4000;
 
+// ========================================
+// DATABASE - MYSQL
+// ========================================
+
 
 // ========================================
 // MIDDLEWARE
@@ -15,6 +19,7 @@ app.use(express.json());
 // ROUTING
 // ========================================
 const usersRoutes = require('./routes/users')
+
 
 app.use('/users', usersRoutes);
 
