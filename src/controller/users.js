@@ -4,10 +4,17 @@ const createNewUser = async (req, res) => {
     
     const { body } = req;
 
+    if(!body.email || !body.name || !body.address) {
+        return res.status(400).json({
+            message : 'Data yang dikirimkan kurang lengkap',
+            data: null
+        })
+    }
+
     try {
         await userModel.createNewUser(body);
 
-        res.json ({
+        res.status(201).json ({
             message: 'Create New User Success',
             data: body,
         })
@@ -25,7 +32,7 @@ const getAllUsers = async (req, res) => {
     try {
         const [data] = await userModel.getAllUsers();
     
-        res.json ({
+        res.status(200).json ({
             message: 'Get All Users Success',
             data : data
         })
@@ -67,7 +74,7 @@ const deleteUser = async (req, res) => {
     try {
         await userModel.deleteUser(id);
 
-        res.json({
+        res.status(200).json({
             message : 'Delete User Success',
             data : null
         });
