@@ -3,6 +3,12 @@ const app       = express();
 const port      = 4000;
 
 
+// ========================================
+// MIDDLEWARE
+// ========================================
+const middleWareLogRequest = require('./middleware/logs');
+
+app.use(middleWareLogRequest);
 
 // ========================================
 // ROUTING
