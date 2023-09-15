@@ -1,0 +1,12 @@
+{
+  "name": "restapi-sederhana",
+  "version": "1.0.0",
+  "description": "Rest API dengan Express JS dan MySQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Yudha Ginong Pratidina",
+  "license": "ISC"
+}
